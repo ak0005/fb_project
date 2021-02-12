@@ -1,6 +1,5 @@
 import request as request
 import const as const
-import json
 from datetime import datetime
 import pymongo
 
