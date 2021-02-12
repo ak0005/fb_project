@@ -44,12 +44,15 @@ def handleData(data):
 
             fp.write(post['id']+','+str(datetime.now())+'\n')
 
-            d2 = json_extract(post['attachments'], 'src')
+            dI = json_extract(post['attachments'], 'src')
+            dV = json_extract(post['attachments'], 'source')
 
             collection.update_one({'_id': post['id']}, {
                                   '$unset': {'attachments': ""}})
             collection.update({'_id': post['id']}, {
-                              '$set': {'attachments': d2}})
+                              '$set': {'attachments.images': dI}})
+            collection.update({'_id': post['id']}, {
+                              '$set': {'attachments.videos': dV}})
 
 
 while len(url):

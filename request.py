@@ -5,6 +5,7 @@ import sys
 import select
 import const as const
 from datetime import datetime
+from random import randrange
 
 fp = open(const.requestLog, 'a')
 
@@ -20,6 +21,7 @@ def takeInput():
 
 
 def apiCall(url):
+    #time.sleep(randrange(10))
     fp.write(url+'\n')
     while 1:
         try:

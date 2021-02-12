@@ -46,13 +46,16 @@ def handleCommentData(postId, data):
 
             fp.write(postId+','+comment['id']+','+str(datetime.now())+'\n')
 
-            d2 = json_extract(comment['attachment'], 'src')
+            dI = json_extract(comment['attachment'], 'src')
+            dV = json_extract(comment['attachment'], 'source')
 
             collection.update_one({'_id': postId, 'comments': {'$elemMatch': {'_id': comment['id']}}}, {
                                   '$unset': {'comments.$.attachment': ""}})
 
             collection.update({'_id': postId, 'comments': {'$elemMatch': {'_id': comment['id']}}}, {
-                              '$set': {'comments.$.attachment': d2}})
+                              '$set': {'comments.$.attachment.images': dI}})
+            collection.update({'_id': postId, 'comments': {'$elemMatch': {'_id': comment['id']}}}, {
+                              '$set': {'comments.$.attachment.videos': dV}})               
 
 
 def handleData(data):
