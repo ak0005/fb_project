@@ -4,7 +4,7 @@ from datetime import datetime
 import pymongo
 
 url = "https://graph.facebook.com/v9.0/" + \
-    const.grpId+"/feed?fields=comments%7Battachment%7D&access_token="+const.token
+    const.grpId+"/feed?fields=comments%7Battachment%7D&access_token="+const.tokenCommentAttachments
 
 fp = open(const.commentAttachmentsLog, 'a')
 fp.write("=========================>\n")

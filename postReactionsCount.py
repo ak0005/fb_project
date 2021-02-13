@@ -1,11 +1,10 @@
 import request as request
 import const as const
-import json
 from datetime import datetime
 import pymongo
 
 url = "https://graph.facebook.com/v9.0/" + \
-    const.grpId+"/feed?fields=reactions.summary(true)&access_token="+const.token
+    const.grpId+"/feed?fields=reactions.summary(true)&access_token="+const.tokenPostReactions
 
 fp = open(const.postReactionsLog, 'a')
 fp.write("=========================>\n")
@@ -22,6 +21,8 @@ def handleData(data):
 
             if collection.find({'_id': post['id']}).limit(1).count() ==0:
                 collection.insert_one(d2)
+
+            fp.write(post['id']+','+str(datetime.now())+'\n')
 
             collection.update({'_id':post['id']},{
                 "$set":{"reactions":post['reactions']['summary']['total_count']}

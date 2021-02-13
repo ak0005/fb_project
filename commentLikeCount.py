@@ -1,9 +1,10 @@
 import request as request
 import const as const
 import pymongo
+from datetime import datetime
 
 url = "https://graph.facebook.com/v9.0/"+const.grpId + \
-    "/feed?fields=comments%7Blike_count%7D&access_token="+const.token
+    "/feed?fields=comments%7Blike_count%7D&access_token="+const.tokenCommentLikeCount
 
 
 fp = open(const.commentLikeCountLog, 'a')
@@ -20,7 +21,8 @@ def handleCommentData(postId, data):
             if collection.find({'_id': postId, 'comments': {'$elemMatch': {'_id': comment['id']}}}).limit(1).count() == 0:
                 collection.update({'_id': postId}, {
                                   '$push': {'comments': {'_id': comment['id']}}})
-                                  
+
+            fp.write(postId+','+comment['id']+','+str(datetime.now())+'\n')                 
             collection.update({'_id': postId, 'comments': {'$elemMatch': {'_id': comment['id']}}}, {
                               '$set': {'comments.$.like_count': comment['like_count']}})
 

@@ -1,11 +1,10 @@
 import request as request
 import const as const
-import json
 from datetime import datetime
 import pymongo
 
 url = "https://graph.facebook.com/v9.0/"+const.grpId + \
-    "/feed?fields=comments%7Bcomments%7D&access_token="+const.token
+    "/feed?fields=comments%7Bcomments%7D&access_token="+const.tokenSubComments
 
 fp = open(const.subCommentLog, 'a')
 fp.write("=========================>\n")
