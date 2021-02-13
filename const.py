@@ -15,6 +15,8 @@ subCommentLog='subCommentLog.csv'
 attachmentLog='attachmentLog.csv'
 commentAttachmentsLog='commentAttachmentsLog.csv'
 commentLikeCountLog='subCommentLikeCount.csv'
+postReactionsLog='postReactionsLog.csv'
+
 requestLog='requestLog.txt'
 
 
