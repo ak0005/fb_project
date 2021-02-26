@@ -19,4 +19,4 @@ fp.write("]\n}")
 
 fp.close()
 
-# os.system('mongodump --db 161136235596016 -o ./1--C')
+os.system('mongodump --db '+const.grpId)
