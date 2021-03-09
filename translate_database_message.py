@@ -1,5 +1,4 @@
 import pymongo
-import json
 from googletrans import Translator
 
 database = 'fb_grp'

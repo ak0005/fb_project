@@ -1,5 +1,5 @@
 import os
-import const as const
+import  utils.const as const
 
 os.system('mongoexport -d '+const.grpId+' -c ' +
           const.PostCollection+' -o '+const.dump+' --pretty')
