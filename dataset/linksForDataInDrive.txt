@@ -1,0 +1,16 @@
+## anyone with link can view the data pls don't share
+
+# Complete structure DAta with key frames
+https://drive.google.com/file/d/1vk3P-DhoOMim_v7bZsjGE21P61V0nvuH/view?usp=sharing
+
+## size 23GB
+
+# vgg16_post.csv
+https://drive.google.com/file/d/1pEVZzBJ_vxKiXP24-Ys8L9lnWbe3blfy/view?usp=sharing
+
+## size 2GB
+
+# vgg16_comment.csv
+https://drive.google.com/file/d/1-0tBzU8-pJEGpB7dpIy7NaC89RvptEc4/view?usp=sharing
+
+## size 7GB
