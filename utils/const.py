@@ -2,11 +2,12 @@
 #user_managed_groups
 #https://developers.facebook.com/tools/debug/accesstoken/
 
-token='Your Access token'
+token='Your access token'
 
 #token corresponding to all the files that u r willing to run parallelly should be unique else their will be no gain in running parallelly
 
 tokenPost=token
+tokenCreatedTime=token
 tokenComments=token
 tokenSubComments=token
 tokenAttachments=token
@@ -21,6 +22,7 @@ PostCollection='post'
 tempFile='temp.txt'
 
 postLog='postLog.csv'
+createdTimeLog='createdTimeLog.csv'
 commentLog='commentLog.csv'
 subCommentLog='subCommentLog.csv'
 attachmentLog='attachmentLog.csv'
